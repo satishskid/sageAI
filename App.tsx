@@ -75,6 +75,8 @@ const App: React.FC = () => {
                   user?.email === 'satish@skids.health' ||
                   user?.email === 'satish.rath@gmail.com' ||
                   user?.email === 'drpratichi@skids.health';
+  console.log("User email:", user?.email);
+  console.log("isAdmin:", isAdmin);
 
   const handleSignIn = async () => {
     try {
