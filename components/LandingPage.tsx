@@ -6,7 +6,6 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-vedic-bg via-vedic-bg-alt to-vedic-surface">
@@ -348,15 +347,15 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
                 </div>
                 
                 <div className="bg-vedic-accent/5 rounded-xl p-6 border border-vedic-accent/10">
-                  <h4 className="text-lg font-semibold text-vedic-accent-dark mb-4">Key Research Areas</h4>
+                  <h4 className="text-lg font-semibold text-vedic-accent-dark mb-4">Key Focus Areas</h4>
                   <ul className="space-y-3 text-vedic-secondary-text">
                     <li className="flex items-start gap-3">
                       <span className="text-vedic-accent mt-1">•</span>
-                      <span>Contemplative practices and neuroplasticity</span>
+                      <span>Core principles of the foundation of spiritual health</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-vedic-accent mt-1">•</span>
-                      <span>Mind-body integration in healing</span>
+                      <span>Arguments on the evolution of the vedantic science</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-vedic-accent mt-1">•</span>
@@ -434,85 +433,37 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
               Academic Programs & Resources
             </h2>
             <p className="text-lg text-vedic-secondary-text max-w-2xl mx-auto">
-              Upcoming seminars, research publications, and educational content for healthcare professionals
+              Upcoming seminars and educational content for healthcare professionals
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Seminar Announcement */}
-            <div className="bg-white rounded-xl p-8 shadow-lg border border-vedic-border hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">🎓</span>
-                <span className="bg-vedic-accent/10 text-vedic-accent px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
-              </div>
-              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">
-                Contemplative Medicine Seminar
+          <div className="text-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-12 border border-vedic-accent/20 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-semibold text-vedic-accent-dark mb-6">
+                Educational Content Coming Soon
               </h3>
-              <p className="text-vedic-secondary-text mb-4">
-                A deep dive into integrating contemplative practices with clinical care. 
-                Exploring evidence-based approaches to spiritual health in healthcare settings.
+              <p className="text-lg text-vedic-secondary-text leading-relaxed mb-8">
+                We are developing comprehensive seminars and podcasts focused on integrating 
+                Vedantic wisdom with modern healthcare practices. These educational resources 
+                will explore evidence-based approaches to spiritual health for healthcare professionals.
               </p>
-              <div className="text-sm text-vedic-secondary-text">
-                <p className="mb-2"><span className="font-medium">Date:</span> Coming Soon</p>
-                <p><span className="font-medium">Format:</span> Academic Webinar</p>
+              <div className="flex items-center justify-center gap-8 text-vedic-accent">
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🎓</div>
+                  <p className="text-sm font-medium">Academic Seminars</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🎙️</div>
+                  <p className="text-sm font-medium">Educational Podcasts</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">📚</div>
+                  <p className="text-sm font-medium">Research Publications</p>
+                </div>
               </div>
-            </div>
-
-            {/* Research Publication */}
-            <div className="bg-white rounded-xl p-8 shadow-lg border border-vedic-border hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">📚</span>
-                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Published</span>
-              </div>
-              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">
-                AI-Guided Contemplative Learning
-              </h3>
-              <p className="text-vedic-secondary-text mb-4">
-                Research paper exploring the efficacy of AI-assisted contemplative education 
-                in healthcare professional development and patient care enhancement.
+              <p className="text-vedic-secondary-text mt-6 font-medium">
+                Watch this space for updates on our upcoming educational offerings.
               </p>
-              <div className="text-sm text-vedic-secondary-text">
-                <p className="mb-2"><span className="font-medium">Journal:</span> Digital Health & Wellness</p>
-                <p><span className="font-medium">Authors:</span> Rath, S.P. et al.</p>
-              </div>
-            </div>
-
-            {/* Podcast Series */}
-            <div className="bg-white rounded-xl p-8 shadow-lg border border-vedic-border hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">🎙️</span>
-                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">In Development</span>
-              </div>
-              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">
-                Wisdom & Wellness Podcast
-              </h3>
-              <p className="text-vedic-secondary-text mb-4">
-                Monthly discussions on integrating ancient wisdom with modern healthcare. 
-                Featuring interviews with leading researchers and practitioners.
-              </p>
-              <div className="text-sm text-vedic-secondary-text">
-                <p className="mb-2"><span className="font-medium">Launch:</span> Q2 2025</p>
-                <p><span className="font-medium">Hosts:</span> Dr. Rath & Prof. Prathosh</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action for Professionals */}
-          <div className="text-center mt-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-vedic-accent/20 max-w-2xl mx-auto">
-              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-4">
-                Join the Academic Community
-              </h3>
-              <p className="text-vedic-secondary-text mb-6">
-                Connect with fellow healthcare professionals exploring the intersection of 
-                spiritual wisdom and modern medicine.
-              </p>
-              <button 
-                onClick={onSignIn}
-                className="bg-vedic-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-vedic-accent-dark transition-all"
-              >
-                Access Academic Platform
-              </button>
             </div>
           </div>
         </div>

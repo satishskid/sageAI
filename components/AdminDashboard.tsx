@@ -6,6 +6,11 @@ import PaymentPlansManagement from './PaymentPlansManagement';
 import ProFeaturesManagement from './ProFeaturesManagement';
 import APIHealthIndicator from './APIHealthIndicator';
 import AdminWhitelistManager from './AdminWhitelistManager';
+import AnnouncementManagement from './AnnouncementManagement';
+
+interface AdminDashboardProps {
+  currentUserEmail?: string;
+}
 
 interface APIStatus {
   name: string;
@@ -27,11 +32,11 @@ interface UserStats {
   };
 }
 
-const AdminDashboard: React.FC = () => {
+const AdminDashboard: React.FC<AdminDashboardProps> = ({ currentUserEmail: _ }) => {
   const [apiStatuses, setApiStatuses] = useState<APIStatus[]>([]);
   const [userStats, setUserStats] = useState<UserStats | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'overview' | 'apis' | 'plans' | 'pro-features' | 'whitelist' | 'settings'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'apis' | 'plans' | 'pro-features' | 'whitelist' | 'announcements' | 'settings'>('overview');
 
   // Check if user is admin (temporarily allowing all authenticated users for demo)
   const isAdmin = true; // Temporary: allow all users to see admin dashboard for demo
@@ -132,6 +137,7 @@ const AdminDashboard: React.FC = () => {
               { id: 'plans', label: 'Payment Plans', icon: '💳' },
               { id: 'pro-features', label: 'Pro Features', icon: '⭐' },
               { id: 'whitelist', label: 'User Whitelist', icon: '👥' },
+              { id: 'announcements', label: 'Announcements', icon: '📢' },
               { id: 'settings', label: 'Settings', icon: '⚙️' }
             ].map((tab) => (
               <button
@@ -320,6 +326,13 @@ const AdminDashboard: React.FC = () => {
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-semibold text-vedic-accent-dark mb-6">User Whitelist Management</h2>
             <AdminWhitelistManager adminEmail="satish@skids.health" />
+          </div>
+        )}
+
+        {/* Announcements Tab */}
+        {activeTab === 'announcements' && (
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <AnnouncementManagement />
           </div>
         )}
 

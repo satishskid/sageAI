@@ -72,7 +72,8 @@ const App: React.FC = () => {
   // Check if user is admin - update with your admin email addresses
   const isAdmin = user?.email === 'dr.satish@greybrain.ai' || 
                   user?.email === 'balwant@greybrain.ai' ||
-                  user?.email === 'satish@skids.health';
+                  user?.email === 'satish@skids.health' ||
+                  user?.email === 'drpratichi@skids.health';
 
   const handleSignIn = async () => {
     try {
