@@ -306,18 +306,15 @@ How would you like to begin your spiritual journey today?`
                         {user?.displayName || user?.email || 'User'}
                       </span>
                       {isAdmin && (
-                        <>
-                          <div style={{color: 'red', fontSize: '20px'}}>ADMIN DETECTED</div>
-                          <button
-                            onClick={() => {
-                              window.location.href = '/admin';
-                            }}
-                            className="text-xs px-2 py-1 bg-vedic-accent/10 text-vedic-accent rounded border border-vedic-accent/20 hover:bg-vedic-accent/20 transition-colors"
-                            title="Admin Panel"
-                          >
-                            ⚡
-                          </button>
-                        </>
+                        <button
+                          onClick={() => {
+                            window.location.href = '/admin';
+                          }}
+                          className="text-xs px-2 py-1 bg-vedic-accent/10 text-vedic-accent rounded border border-vedic-accent/20 hover:bg-vedic-accent/20 transition-colors"
+                          title="Admin Panel"
+                        >
+                          Admin ⚡
+                        </button>
                       )}
                       <button
                         onClick={handleSignOut}
