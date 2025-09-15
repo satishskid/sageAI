@@ -389,8 +389,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
                   </div>
                 </div>
                 <p className="text-vedic-secondary-text leading-relaxed">
-                  Exploring how contemplative practices from Vedantic traditions can complement conventional 
-                  medical treatments, with focus on holistic patient care and physician well-being.
+                  A physician-scientist with expertise in behavioral models and persuasion, focused on scientifically exploring the third dimension of health.
                 </p>
               </div>
 
@@ -405,8 +404,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
                   </div>
                 </div>
                 <p className="text-vedic-secondary-text leading-relaxed">
-                  Developing computational models and AI-driven approaches to understand and measure 
-                  the impact of spiritual practices on health outcomes and cognitive well-being.
+                  An AI professor at IISc and a Vedic sciences scholar, specializing in the amalgamation of Vedic principles with modern science.
                 </p>
               </div>
             </div>
