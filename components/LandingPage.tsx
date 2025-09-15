@@ -6,6 +6,7 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-vedic-bg via-vedic-bg-alt to-vedic-surface">
@@ -21,6 +22,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Features</a>
               <a href="#faculty" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Faculty</a>
+              <a href="#spiritual-health" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Spiritual Health</a>
               <a href="#about" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">About</a>
               <button 
                 onClick={onSignIn}
@@ -55,6 +57,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
               <div className="px-2 pt-2 pb-3 space-y-1">
                 <a href="#features" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Features</a>
                 <a href="#faculty" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Faculty</a>
+                <a href="#spiritual-health" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Spiritual Health</a>
                 <a href="#about" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">About</a>
                 <div className="flex flex-col space-y-2 px-3 py-2">
                   <button 
@@ -312,24 +315,221 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-vedic-accent-dark mb-8">
-            A Digital Sanctuary for Vedantic Learning
-          </h2>
-          <p className="text-lg text-vedic-secondary-text leading-relaxed mb-8">
-            Created with reverence for the ancient wisdom traditions, this platform offers a contemplative space
-            to explore the profound teachings of Vedanta. Each conversation is an opportunity to deepen your
-            understanding of these timeless truths that have guided seekers for millennia.
-          </p>
-          <div className="text-sm text-vedic-secondary-text">
-            <p>Thoughtfully developed by <span className="font-medium text-vedic-accent">GreyBrain.ai</span></p>
+      {/* Science of Spiritual Health Section */}
+      <section id="spiritual-health" className="py-16 lg:py-24 bg-gradient-to-br from-white via-vedic-bg/30 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-vedic-accent-dark mb-6">
+              Science of Spiritual Health
+            </h2>
+            <p className="text-xl text-vedic-secondary-text max-w-4xl mx-auto leading-relaxed">
+              An Academic Exploration for Healthcare Professionals
+            </p>
+          </div>
+
+          {/* Academic Introduction */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 lg:p-12 shadow-lg border border-vedic-border/20">
+              <h3 className="text-2xl lg:text-3xl font-semibold text-vedic-accent-dark mb-6 text-center">
+                Defining Spiritual Health in Modern Healthcare
+              </h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
+                <div>
+                  <h4 className="text-xl font-semibold text-vedic-accent-dark mb-4">WHO's Recognition</h4>
+                  <p className="text-vedic-secondary-text leading-relaxed mb-4">
+                    The World Health Organization acknowledges spiritual well-being as a fundamental component of health, 
+                    yet academic frameworks for understanding and measuring spiritual health remain underdeveloped.
+                  </p>
+                  <p className="text-vedic-secondary-text leading-relaxed">
+                    This platform serves as an academic exercise to explore how ancient wisdom traditions, 
+                    particularly Vedanta, can inform evidence-based approaches to spiritual health.
+                  </p>
+                </div>
+                
+                <div className="bg-vedic-accent/5 rounded-xl p-6 border border-vedic-accent/10">
+                  <h4 className="text-lg font-semibold text-vedic-accent-dark mb-4">Key Research Areas</h4>
+                  <ul className="space-y-3 text-vedic-secondary-text">
+                    <li className="flex items-start gap-3">
+                      <span className="text-vedic-accent mt-1">•</span>
+                      <span>Contemplative practices and neuroplasticity</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-vedic-accent mt-1">•</span>
+                      <span>Mind-body integration in healing</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-vedic-accent mt-1">•</span>
+                      <span>Philosophical frameworks for patient care</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-vedic-accent mt-1">•</span>
+                      <span>Integrative approaches to wellness</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Faculty Expertise */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <h3 className="text-2xl lg:text-3xl font-semibold text-vedic-accent-dark mb-8 text-center">
+              Bridging Ancient Wisdom with Modern Medicine
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-vedic-border/20">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-vedic-accent/10 flex items-center justify-center">
+                    <span className="text-2xl">👨‍⚕️</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-vedic-accent-dark">Clinical Perspective</h4>
+                    <p className="text-vedic-secondary-text">Dr. Satish Prasad Rath, MD</p>
+                  </div>
+                </div>
+                <p className="text-vedic-secondary-text leading-relaxed">
+                  Exploring how contemplative practices from Vedantic traditions can complement conventional 
+                  medical treatments, with focus on holistic patient care and physician well-being.
+                </p>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-vedic-border/20">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-vedic-accent/10 flex items-center justify-center">
+                    <span className="text-2xl">👨‍🔬</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-vedic-accent-dark">Research Framework</h4>
+                    <p className="text-vedic-secondary-text">Prof. Prathosh A P, PhD</p>
+                  </div>
+                </div>
+                <p className="text-vedic-secondary-text leading-relaxed">
+                  Developing computational models and AI-driven approaches to understand and measure 
+                  the impact of spiritual practices on health outcomes and cognitive well-being.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Academic Disclaimer */}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-vedic-accent/5 rounded-xl p-8 border border-vedic-accent/20">
+              <p className="text-vedic-secondary-text leading-relaxed">
+                <span className="font-semibold">Academic Exercise:</span> This platform represents an ongoing academic exploration 
+                of spiritual health concepts. All interactions with Professor Arya should be considered educational content 
+                for healthcare professionals interested in integrative approaches to patient care and personal well-being.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Announcements Carousel Section */}
+      <section className="py-16 bg-vedic-bg-alt">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-vedic-accent-dark mb-4">
+              Academic Programs & Resources
+            </h2>
+            <p className="text-lg text-vedic-secondary-text max-w-2xl mx-auto">
+              Upcoming seminars, research publications, and educational content for healthcare professionals
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Seminar Announcement */}
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-vedic-border hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🎓</span>
+                <span className="bg-vedic-accent/10 text-vedic-accent px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
+              </div>
+              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">
+                Contemplative Medicine Seminar
+              </h3>
+              <p className="text-vedic-secondary-text mb-4">
+                A deep dive into integrating contemplative practices with clinical care. 
+                Exploring evidence-based approaches to spiritual health in healthcare settings.
+              </p>
+              <div className="text-sm text-vedic-secondary-text">
+                <p className="mb-2"><span className="font-medium">Date:</span> Coming Soon</p>
+                <p><span className="font-medium">Format:</span> Academic Webinar</p>
+              </div>
+            </div>
+
+            {/* Research Publication */}
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-vedic-border hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">📚</span>
+                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Published</span>
+              </div>
+              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">
+                AI-Guided Contemplative Learning
+              </h3>
+              <p className="text-vedic-secondary-text mb-4">
+                Research paper exploring the efficacy of AI-assisted contemplative education 
+                in healthcare professional development and patient care enhancement.
+              </p>
+              <div className="text-sm text-vedic-secondary-text">
+                <p className="mb-2"><span className="font-medium">Journal:</span> Digital Health & Wellness</p>
+                <p><span className="font-medium">Authors:</span> Rath, S.P. et al.</p>
+              </div>
+            </div>
+
+            {/* Podcast Series */}
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-vedic-border hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🎙️</span>
+                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">In Development</span>
+              </div>
+              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">
+                Wisdom & Wellness Podcast
+              </h3>
+              <p className="text-vedic-secondary-text mb-4">
+                Monthly discussions on integrating ancient wisdom with modern healthcare. 
+                Featuring interviews with leading researchers and practitioners.
+              </p>
+              <div className="text-sm text-vedic-secondary-text">
+                <p className="mb-2"><span className="font-medium">Launch:</span> Q2 2025</p>
+                <p><span className="font-medium">Hosts:</span> Dr. Rath & Prof. Prathosh</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action for Professionals */}
+          <div className="text-center mt-12">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-vedic-accent/20 max-w-2xl mx-auto">
+              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-4">
+                Join the Academic Community
+              </h3>
+              <p className="text-vedic-secondary-text mb-6">
+                Connect with fellow healthcare professionals exploring the intersection of 
+                spiritual wisdom and modern medicine.
+              </p>
+              <button 
+                onClick={onSignIn}
+                className="bg-vedic-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-vedic-accent-dark transition-all"
+              >
+                Access Academic Platform
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-vedic-accent-dark mb-8">
+            Vedanta Vision
+          </h2>
+          <p className="text-lg text-vedic-secondary-text leading-relaxed mb-8">
+            A digital sanctuary bridging ancient Vedantic wisdom with modern understanding. 
+            Each conversation deepens your exploration of timeless truths that have guided seekers for millennia.
+          </p>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-vedic-accent text-white">
@@ -338,7 +538,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
             Begin Your Journey Within
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Step into a space of contemplative learning where ancient wisdom meets modern understanding.
             Your exploration of Vedantic truth awaits.
           </p>
 
@@ -348,10 +547,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
           >
             🕉️ Enter the Sanctuary
           </button>
-
-          <p className="text-sm mt-4 opacity-75">
-            A contemplative space for spiritual learning
-          </p>
         </div>
       </section>
 
@@ -361,12 +556,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onSignIn }) => {
           <div className="text-center">
             <div className="text-2xl font-bold mb-4">🕉️ Vedanta Vision</div>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              A digital sanctuary for contemplative learning, bridging ancient wisdom with modern understanding.
               Created with reverence for the timeless teachings of Vedanta.
             </p>
-            <div className="text-sm text-gray-400 mb-8">
-              Thoughtfully developed by <span className="text-vedic-accent font-medium">GreyBrain.ai</span>
-            </div>
           </div>
 
           <div className="border-t border-gray-600 pt-8 text-center text-gray-300">
