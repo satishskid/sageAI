@@ -33,7 +33,7 @@
 
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#8D6E63" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Vedanta Vision" />
     <meta name="application-name" content="Vedanta Vision" />
@@ -44,8 +44,7 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="152x152" href="/icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icon-180x180.png" />
+    <link rel="apple-touch-icon" href="/icon-192x192.svg" />
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -80,6 +79,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS is handled by Vite build process -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Source Sans Pro', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            colors: {
+              'vedic-bg': '#FDF6E3',
+              'vedic-bg-alt': '#FBF1D3',
+              'vedic-surface': '#EFEBE9',
+              'vedic-primary-text': '#4F442E',
+              'vedic-secondary-text': '#A1887F',
+              'vedic-accent': '#8D6E63',
+              'vedic-accent-dark': '#6D4C41',
+              'vedic-border': '#EADDC7',
+              'user-bg': '#E0E7FF',
+              'user-text': '#312E81',
+            }
+          }
+        }
+      }
+    </script>
     <style>
       /* For custom scrollbars to match the aesthetic */
       ::-webkit-scrollbar {

@@ -105,3 +105,6 @@ firestore-debug.log*
 
 # Local testing files
 whitelist-*.json
+
+# Local Netlify folder
+.netlify
