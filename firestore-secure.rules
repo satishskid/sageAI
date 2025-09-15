@@ -1,0 +1,65 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Whitelist collection - minimal read access for authentication
+    match /whitelist/{email} {
+      // Only allow reading specific whitelisted email documents
+      // This is the minimum required for the authentication flow
+      allow read: if isValidEmailFormat(email) && 
+                     resource.data.status == 'active';
+      
+      // Only admins can write to whitelist
+      allow write: if request.auth != null && isAdmin() &&
+                     isValidEmailFormat(email);
+    }
+    
+    // Access logs - users can only access their own logs
+    match /access_logs/{userId} {
+      allow read, write: if request.auth != null && 
+                           request.auth.uid == userId &&
+                           isWhitelistedUser(request.auth.token.email);
+    }
+    
+    // User data - users can only access their own data
+    match /users/{userId} {
+      allow read, write: if request.auth != null && 
+                           request.auth.uid == userId &&
+                           isWhitelistedUser(request.auth.token.email);
+    }
+    
+    // Admin-only collections
+    match /admin/{document=**} {
+      allow read, write: if request.auth != null && isAdmin();
+    }
+    
+    // Analytics data - restricted access
+    match /analytics/{document=**} {
+      allow read: if request.auth != null && isAdmin();
+      allow write: if request.auth != null && 
+                      isWhitelistedUser(request.auth.token.email);
+    }
+    
+    // Helper functions
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == 'satish@skids.health' ||
+        request.auth.token.email == 'dr.satish@greybrain.ai' ||
+        request.auth.token.email == 'balwant@greybrain.ai'
+      );
+    }
+    
+    function isValidEmailFormat(email) {
+      return email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+    }
+    
+    function isWhitelistedUser(email) {
+      return exists(/databases/$(database)/documents/whitelist/$(email)) &&
+             get(/databases/$(database)/documents/whitelist/$(email)).data.status == 'active';
+    }
+    
+    // Default deny all other documents
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

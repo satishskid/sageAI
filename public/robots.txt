@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+Disallow: /admin
+Disallow: /api/
+Disallow: /_clerk/
+Disallow: /dashboard/
+
+# Sitemap location
+Sitemap: https://vedantavision.ai/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: Slurp
+Allow: /
+Disallow: /admin
+Disallow: /api/
