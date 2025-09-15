@@ -73,6 +73,7 @@ const App: React.FC = () => {
   const isAdmin = user?.email === 'dr.satish@greybrain.ai' || 
                   user?.email === 'balwant@greybrain.ai' ||
                   user?.email === 'satish@skids.health' ||
+                  user?.email === 'satish.rath@gmail.com' ||
                   user?.email === 'drpratichi@skids.health';
 
   const handleSignIn = async () => {
