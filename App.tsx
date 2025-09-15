@@ -75,8 +75,6 @@ const App: React.FC = () => {
                   user?.email === 'satish@skids.health' ||
                   user?.email === 'satish.rath@gmail.com' ||
                   user?.email === 'drpratichi@skids.health';
-  console.log("User email:", user?.email);
-  console.log("isAdmin:", isAdmin);
 
   const handleSignIn = async () => {
     try {
@@ -308,15 +306,18 @@ How would you like to begin your spiritual journey today?`
                         {user?.displayName || user?.email || 'User'}
                       </span>
                       {isAdmin && (
-                        <button
-                          onClick={() => {
-                            window.location.href = '/admin';
-                          }}
-                          className="text-xs px-2 py-1 bg-vedic-accent/10 text-vedic-accent rounded border border-vedic-accent/20 hover:bg-vedic-accent/20 transition-colors"
-                          title="Admin Panel"
-                        >
-                          ⚡
-                        </button>
+                        <>
+                          <div style={{color: 'red', fontSize: '20px'}}>ADMIN DETECTED</div>
+                          <button
+                            onClick={() => {
+                              window.location.href = '/admin';
+                            }}
+                            className="text-xs px-2 py-1 bg-vedic-accent/10 text-vedic-accent rounded border border-vedic-accent/20 hover:bg-vedic-accent/20 transition-colors"
+                            title="Admin Panel"
+                          >
+                            ⚡
+                          </button>
+                        </>
                       )}
                       <button
                         onClick={handleSignOut}
